@@ -1,6 +1,7 @@
 package state.connection;
 
 public class Conexion {
+
     private ConexionEstado conexionEstado;
 
     public Link link;
@@ -8,13 +9,16 @@ public class Conexion {
     public Conexion(Link link) {
         assert link != null;
         this.link = link;
-        conexionEstado.cerrar(this);// Estado.CERRADO;
+        this.setEstado(new Cerrado());
     }
 
     public Link getLink() {
         return link;
     }
 
+    public void setEstado(ConexionEstado conexionEstado) {
+        this.conexionEstado=conexionEstado;
+    }
     public Estado getEstado() {
         return conexionEstado.getEstado();
     }
