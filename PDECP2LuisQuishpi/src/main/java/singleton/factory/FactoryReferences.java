@@ -5,7 +5,9 @@ import java.util.Map;
 
 public class FactoryReferences {
     private Map<String, Integer> references;
-    private static  FactoryReferences factoryReference;
+
+    private static FactoryReferences factoryReference;
+
     private int reference;
 
     public FactoryReferences() {
@@ -28,8 +30,8 @@ public class FactoryReferences {
     }
 
     public static FactoryReferences getFactory() {
-        if(FactoryReferences.factoryReference==null){
-            factoryReference=new FactoryReferences();
+        if (FactoryReferences.factoryReference == null) {
+            factoryReference = new FactoryReferences();
         }
         return FactoryReferences.factoryReference;
     }
