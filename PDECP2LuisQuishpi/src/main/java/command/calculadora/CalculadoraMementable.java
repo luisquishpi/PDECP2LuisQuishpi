@@ -14,13 +14,13 @@ public class CalculadoraMementable extends Calculadora implements Mementable<Cal
     }
 
     @Override
-    public void restoreMemento(Calculadora memento) {
-        this.setTotal(memento.getTotal());
+    public void restoreMemento(Calculadora calculadora) {
+        this.setTotal(calculadora.getTotal());
     }
 
     @Override
     public String toString() {
-        return "Calculadora Mementable [" + this.getTotal() + "]";
+        return "Calculadora Mementable[" + this.getTotal() + "]";
     }
 
 }
