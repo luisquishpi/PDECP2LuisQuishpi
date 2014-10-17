@@ -33,6 +33,13 @@ public abstract class Compuesto extends Componente {
         return s + this.dibujarString();
     }
 
-    
+    public void addComponente(Componente componente) {
+        if (componente != null)
+            this.listaComponentes.add(componente);
+    }
+
+    public void removeComponente(Componente componente) {
+        this.listaComponentes.remove(componente);
+    }
 
 }
