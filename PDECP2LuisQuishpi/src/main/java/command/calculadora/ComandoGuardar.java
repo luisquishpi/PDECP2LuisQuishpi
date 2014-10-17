@@ -4,8 +4,6 @@ import upm.jbb.IO;
 
 public class ComandoGuardar extends ComandoMementable {
 
-    CalculadoraMementable calculadoraMementable;
-    
     public ComandoGuardar(CalculadoraMementable originador,
             GestorMementos<Calculadora> gestorMementos) {
         super(originador, gestorMementos);
@@ -18,9 +16,9 @@ public class ComandoGuardar extends ComandoMementable {
 
     @Override
     public void execute() {
-        this.calculadoraMementable.setTotal(this.calculadoraMementable.getTotal());
+        this.getOriginador().setTotal(this.getOriginador().getTotal());
         this.getGestorMementos().addMemento(IO.in.readString("Memento: "),
-                this.calculadoraMementable.createMemento());
+                this.getOriginador().createMemento());
 
     }
 

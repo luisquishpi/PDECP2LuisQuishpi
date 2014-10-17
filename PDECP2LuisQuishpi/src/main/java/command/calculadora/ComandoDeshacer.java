@@ -4,8 +4,6 @@ import upm.jbb.IO;
 
 public class ComandoDeshacer extends ComandoMementable {
 
-    CalculadoraMementable calculadoraMementable;
-
     public ComandoDeshacer(CalculadoraMementable originador,
             GestorMementos<Calculadora> gestorMementos) {
         super(originador, gestorMementos);
@@ -20,7 +18,7 @@ public class ComandoDeshacer extends ComandoMementable {
     public void execute() {
         Calculadora calculadoraDeshacer = this.getGestorMementos().getMemento(
                 (String) IO.in.select(this.getGestorMementos().keys(), "Deshacer"));
-        this.calculadoraMementable.restoreMemento(calculadoraDeshacer);
+        this.getOriginador().restoreMemento(calculadoraDeshacer);
     }
 
 }
