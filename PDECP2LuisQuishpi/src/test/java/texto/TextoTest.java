@@ -7,6 +7,8 @@ import org.junit.Test;
 
 import text.Componente;
 import text.FactoriaCaracter;
+import text.Parrafo;
+import text.Texto;
 
 public class TextoTest {
     private Componente H, o, l, a, pf, txt;
